@@ -19,8 +19,7 @@ os.system('cls')
 heroes = [["Odin", "500", "You have forgotten … And you will forget still more!", "30","100", "250"],
 ["Thor", "750", "I make grave mistakes all the time. Everything seems to work out.", "65","50", "200"]]
 hero = None
-#####################################
-menu()
+my_bool = true
 #####################################
 for record in heroes:
     print("Name =", record[0])
@@ -44,15 +43,22 @@ def Start():
             print("Invalid input") 
 
 def menu():
+    global my_bool
     print("Hello and welcome to ABleasdale1's Game\n\n")
-    print("Please choose an option\n1.Start Game\n2. View Instructions\n3. Exit")
-    choice = int(input())
-    if choice == 1:
-        os.system('cls')
-        Start()
-    elif choice == 2:
-        print ("Instructions")
-    elif choice == 3:
-        sys.exit()
-    else:
-        print ("Not a valid Input try again")
+    while my_bool == True:
+        print("Please choose an option\n1.Start Game\n2. View Instructions\n3. Exit")
+        choice = int(input())
+        if choice == 1:
+            os.system('cls')
+            Start()
+            my_bool = False
+        elif choice == 2:
+            print ("Instructions")
+        elif choice == 3:
+            sys.exit()
+        else:
+            print ("Not a valid Input try again")
+
+#####################################
+menu()
+
