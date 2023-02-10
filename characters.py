@@ -1,5 +1,5 @@
 #Repository Owner = ABleasdale1
-#Last Updated = 10/02/2023 11:00
+#Last Updated = 10/02/2023
 #####################################
 class Enemies(object):
     def __init__(self, name, health, dodge, speech, minDam, maxDam): 
@@ -22,3 +22,6 @@ class Hero(object):
         self.minDam = minDam
         self.maxDam = maxDam        
 #####################################
+
+
+Hello 
