@@ -22,12 +22,7 @@ hero = None
 my_bool = True
 dot = '.....\n'
 #####################################
-for record in heroes:
-    print("Name =", record[0])
-    print("Health =", record[1])
-    print("Dodge =", record[3])
-    print("Minimum Damage =", record[4])
-    print("Maximum Damage =", record[5], "\n")
+
 
 def path1():
     print("You continue down the path cautiosly when suddenly")
@@ -35,18 +30,34 @@ def path1():
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(.2)
-    print ("A wandering Loki drops from the Trees blocking your path.")
+    print ("Loki appears from a snake and blocks your path.")
+
 
 def path2():
-    print ("Hel")
-
+    print("You continue down the path cautiosly when suddenly")
+    for char in dot:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(.2)
+    print ("An angry Hel Rises from a fiery pit blocking your path.")
 
 def path3():
-    print ("Freya")
+    print("You continue down the path cautiosly when suddenly")
+    for char in dot:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(.2)
+    print ("A flying Freya drops from the sky blocking your path.")
 
 def Start():
     global hero
     while True:
+        for record in heroes:
+            print("Name =", record[0])
+            print("Health =", record[1])
+            print("Dodge =", record[3])
+            print("Minimum Damage =", record[4])
+            print("Maximum Damage =", record[5], "\n")
         print ("Choose a Hero\n1.Odin\n2.Thor")
         choice = int(input())
         if choice == 1:
@@ -58,6 +69,7 @@ def Start():
         else:
             print("Invalid input")
     while True:
+        os.system('cls')
         print ("You are walking through a forest when you come across a fork in the path. You do not know what lays ahead.\nWhich path will you take? 1/2/3 ([4] to exit)")
         choice2 = int(input())
         if choice2 == 1:
