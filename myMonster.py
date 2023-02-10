@@ -1,5 +1,5 @@
 #Repository Owner = ABleasdale1
-#Last Updated = 10/02/2023 11:00
+#Last Updated = 10/02/2023 13:00
 #####################################
 import sys
 import os
@@ -19,7 +19,8 @@ os.system('cls')
 heroes = [["Odin", "500", "You have forgotten … And you will forget still more!", "30","100", "250"],
 ["Thor", "750", "I make grave mistakes all the time. Everything seems to work out.", "65","50", "200"]]
 hero = None
-my_bool = true
+my_bool = True
+dot = '.....\n'
 #####################################
 for record in heroes:
     print("Name =", record[0])
@@ -27,6 +28,21 @@ for record in heroes:
     print("Dodge =", record[3])
     print("Minimum Damage =", record[4])
     print("Maximum Damage =", record[5], "\n")
+
+def path1():
+    print("You continue down the path cautiosly when suddenly")
+    for char in dot:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(.2)
+    print ("A wandering Loki drops from the Trees blocking your path.")
+
+def path2():
+    print ("Hel")
+
+
+def path3():
+    print ("Freya")
 
 def Start():
     global hero
@@ -40,13 +56,26 @@ def Start():
             hero = Hero("Thor", "750", "I make grave mistakes all the time. Everything seems to work out.", "6","50", "200")
             break
         else:
-            print("Invalid input") 
+            print("Invalid input")
+    while True:
+        print ("You are walking through a forest when you come across a fork in the path. You do not know what lays ahead.\nWhich path will you take? 1/2/3 ([4] to exit)")
+        choice2 = int(input())
+        if choice2 == 1:
+            path1()
+        elif choice2 == 2:
+            path2()
+        elif choice2 == 3:
+            path3()
+        elif choice2 == 4:
+            sys.exit()
+        else:
+            print("Invalid input")
 
 def menu():
     global my_bool
     print("Hello and welcome to ABleasdale1's Game\n\n")
     while my_bool == True:
-        print("Please choose an option\n1.Start Game\n2. View Instructions\n3. Exit")
+        print("Please choose an option\n1. Start Game\n2. View Instructions\n3. Exit")
         choice = int(input())
         if choice == 1:
             os.system('cls')
