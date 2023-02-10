@@ -22,6 +22,3 @@ class Hero(object):
         self.minDam = minDam
         self.maxDam = maxDam        
 #####################################
-
-
-Hello 

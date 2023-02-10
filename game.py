@@ -1,10 +1,10 @@
 #Repository Owner = ABleasdale1
-#Last Updated = 10/02/2023 13:00
+#Last Updated = 10/02/2023
 #####################################
 import sys
 import os
 import time
-import random
+import random as rand
 from characters import Enemies, Hero
 #####################################
 loki = Enemies("Loki", "1500", "You will never be a god.", "90","50", "150")
@@ -21,8 +21,10 @@ heroes = [["Odin", "500", "You have forgotten … And you will forget still more
 hero = None
 my_bool = True
 dot = '.....\n'
+gold = 50
+level = 1
+fctMenu5 = "You have 2 options.\n1. Attempt to comunicate with the God\n2. Fight"
 #####################################
-
 
 def path1():
     print("You continue down the path cautiosly when suddenly")
@@ -31,7 +33,23 @@ def path1():
         sys.stdout.flush()
         time.sleep(.2)
     print ("Loki appears from a snake and blocks your path.")
-
+    while True:    
+        print (fctMenu5)
+        choice = int(input())
+        if choice == 1:
+            print ("You attempt to communicate with the God")
+            sucess = rand.randint(1, 2)
+            for char in dot:
+            sys.stdout.write(char)
+            sys.stdout.flush()
+            time.sleep(.2)
+            if sucess == 1:
+                print ("You are sucessful. The God gives you 25 gold")
+                gold = gold + 25
+            else:
+                print ("You were unsucsseful. Now you must fight.")
+        elif choice == 2:
+            print ("You chose to fight")
 
 def path2():
     print("You continue down the path cautiosly when suddenly")
@@ -102,4 +120,3 @@ def menu():
 
 #####################################
 menu()
-
