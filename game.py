@@ -1,5 +1,5 @@
 #Repository Owner = ABleasdale1
-#Last Updated = 10/02/2023
+#Last Updated = 20/02/2023
 #####################################
 import sys
 import os
@@ -9,10 +9,10 @@ from characters import Enemies, Hero, Item
 #####################################
 loki = Enemies("Loki", "1500", "You will never be a god.", "90","50", "150")
 freya = Enemies("Freya", "1750", "Desires are what can most easily ruin us, lovely.", "75","100", "200")
-hel = Enemies("Hel", "10000", "I am become death, the destroyer of worlds.", "5","1000", "350")
+hel = Enemies("Hel", "10000", "I am become death, the destroyer of worlds.", "5","1000", "2350")
 #####################################
-basicHammer = Item("Loki", "50")
-advancedHammer = Item("Loki", "100")
+basicHammer = Item("Loki", "This item grants an extra 50 attack damage", "50", 75)
+advancedHammer = Item("Loki", "This item grants an extra " "100")
 bobsnuke = Item("Bob's Nuke", "500")
 tacticalNuke = Item("Tactical Nuke", "10000")
 #####################################
@@ -30,6 +30,11 @@ gold = 50
 level = 1
 fctMenu5 = "You have 2 options.\n1. Attempt to comunicate with the God\n2. Fight"
 #####################################
+def store():
+    print ("Welcome to the store\nYou have", gold,)
+    while True:
+        print ("Items are")
+
 
 def path1():
     print("You continue down the path cautiosly when suddenly")
@@ -45,16 +50,18 @@ def path1():
             print ("You attempt to communicate with the God")
             sucess = rand.randint(1, 2)
             for char in dot:
-            sys.stdout.write(char)
-            sys.stdout.flush()
-            time.sleep(.2)
-            if sucess == 1:
-                print ("You are sucessful. The God gives you 25 gold")
-                gold = gold + 25
-            else:
-                print ("You were unsucsseful. Now you must fight.")
+                sys.stdout.write(char)
+                sys.stdout.flush()
+                time.sleep(.2)
+                if sucess == 1:
+                    print ("You are sucessful. The God gives you 25 gold")
+                    gold = gold + 25
+                else:
+                    print ("You were unsucsseful. Now you must fight.")
         elif choice == 2:
             print ("You chose to fight")
+        else:
+            print ("Invalid Input")
 
 def path2():
     print("You continue down the path cautiosly when suddenly")
@@ -63,7 +70,26 @@ def path2():
         sys.stdout.flush()
         time.sleep(.2)
     print ("An angry Hel Rises from a fiery pit blocking your path.")
-
+    while True:    
+        print (fctMenu5)
+        choice = int(input())
+        if choice == 1:
+            print ("You attempt to communicate with the God")
+            sucess = rand.randint(1, 15)
+            for char in dot:
+                sys.stdout.write(char)
+                sys.stdout.flush()
+                time.sleep(.2)
+                if sucess == 1:
+                    print ("You are sucessful. The God gives you 25 gold")
+                    gold = gold + 150
+                else:
+                    print ("You were unsucsseful. Now you must fight.")
+        elif choice == 2:
+            print ("You chose to fight")
+        else:
+            print ("Invalid Input")
+    
 def path3():
     print("You continue down the path cautiosly when suddenly")
     for char in dot:
@@ -71,6 +97,25 @@ def path3():
         sys.stdout.flush()
         time.sleep(.2)
     print ("A flying Freya drops from the sky blocking your path.")
+    while True:    
+        print (fctMenu5)
+        choice = int(input())
+        if choice == 1:
+            print ("You attempt to communicate with the God")
+            sucess = rand.randint(1, 5)
+            for char in dot:
+                sys.stdout.write(char)
+                sys.stdout.flush()
+                time.sleep(.2)
+                if sucess == 1 :
+                    print ("You are sucessful. The God gives you 25 gold")
+                    gold = gold + 50
+                else:
+                    print ("You were unsucsseful. Now you must fight.")
+        elif choice == 2 :
+            print ("You chose to fight")
+        else:
+            print ("Invalid Input")
 
 def Start():
     global hero
