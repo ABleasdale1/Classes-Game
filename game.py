@@ -11,10 +11,10 @@ loki = Enemies("Loki", "1500", "You will never be a god.", "90","50", "150")
 freya = Enemies("Freya", "1750", "Desires are what can most easily ruin us, lovely.", "75","100", "200")
 hel = Enemies("Hel", "10000", "I am become death, the destroyer of worlds.", "5","1000", "2350")
 #####################################
-basicHammer = Item("Loki", "This item grants an extra 50 attack damage", "50", 75)
-advancedHammer = Item("Loki", "This item grants an extra " "100")
-bobsnuke = Item("Bob's Nuke", "500")
-tacticalNuke = Item("Tactical Nuke", "10000")
+basicHammer = Item("Loki", "This item grants an extra 50 attack damage", "50", "75 gold ")
+advancedHammer = Item("Loki", "This item grants an extra", "100", "250 gold")
+bobsnuke = Item("Bob's Nuke","Bob is a dangerous man. Don't trust bob", "500", "500 gold")
+tacticalNuke = Item("Tactical Nuke", "I mean its a tactical nuke what more can I say", "10000", "1000 gold")
 #####################################
 #odin = Hero("Odin", "500", "You have forgotten … And you will forget still more!", "6","100", "250")
 #thor = Hero("Thor", "750", "I make grave mistakes all the time. Everything seems to work out.", "6","50", "200")
@@ -28,12 +28,13 @@ my_bool = True
 dot = '.....\n'
 gold = 50
 level = 1
-fctMenu5 = "You have 2 options.\n1. Attempt to comunicate with the God\n2. Fight"
+fctMenu5 = "You have 2 options.\n1. Attempt to comunicate with the God\n2. Fight the God"
 #####################################
 def store():
     print ("Welcome to the store\nYou have", gold,)
     while True:
         print ("Items are")
+        print (basicHammer.describe())
 
 
 def path1():

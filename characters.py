@@ -28,4 +28,10 @@ class Item(object):
         self.desc = desc
         self.damadd = damadd
         self.cost = cost        
+
+    def name(self):
+        print(self.name)
+
+    def description(self):
+        print(self.desc)
 #####################################
