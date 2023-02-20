@@ -22,3 +22,8 @@ class Hero(object):
         self.minDam = minDam
         self.maxDam = maxDam        
 #####################################
+class Item(object):
+    def __init__(self, name, damadd):
+        self.name = name
+        self.name = damadd
+#####################################

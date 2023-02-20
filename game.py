@@ -5,11 +5,16 @@ import sys
 import os
 import time
 import random as rand
-from characters import Enemies, Hero
+from characters import Enemies, Hero, Item
 #####################################
 loki = Enemies("Loki", "1500", "You will never be a god.", "90","50", "150")
 freya = Enemies("Freya", "1750", "Desires are what can most easily ruin us, lovely.", "75","100", "200")
 hel = Enemies("Hel", "10000", "I am become death, the destroyer of worlds.", "5","1000", "350")
+#####################################
+basicHammer = Item("Loki", "50")
+advancedHammer = Item("Loki", "100")
+bobsnuke = Item("Bob's Nuke", "500")
+tacticalNuke = Item("Tactical Nuke", "10000")
 #####################################
 #odin = Hero("Odin", "500", "You have forgotten … And you will forget still more!", "6","100", "250")
 #thor = Hero("Thor", "750", "I make grave mistakes all the time. Everything seems to work out.", "6","50", "200")
