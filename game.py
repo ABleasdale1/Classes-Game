@@ -55,6 +55,12 @@ def lokiFight():
     else:
         print ("Its all gone wrong")
 
+def helFight():
+    print ("INCOMPLETE")
+
+def freyaFight():
+    print ("INCOMPLETE")
+
 def path1():
     global dot
     global gold
@@ -208,7 +214,6 @@ def menu():
         if choice == 1:
             os.system('cls')
             Start()
-            my_bool = False
         elif choice == 2:
             print ("Instructions")
         elif choice == 3:
@@ -217,5 +222,4 @@ def menu():
             print ("Not a valid Input try again")
 
 #####################################
-#menu()
-lokiFight()
+menu()
