@@ -1,5 +1,4 @@
 #Repository Owner = ABleasdale1
-#Last Updated = 20/02/2023
 #####################################
 import sys
 import os
@@ -16,8 +15,8 @@ advancedHammer = Item("Advanced Hammer", "This item grants an extra", "100", "25
 bobsNuke = Item("Bob's Nuke","Bob is a dangerous man. Don't trust bob", "500", "500 gold")
 tacticalNuke = Item("Tactical Nuke", "I mean its a tactical nuke what more can I say", "10000", "1000 gold")
 #####################################
-#odin = Hero("Odin", "500", "You have forgotten … And you will forget still more!", "6","100", "250")
-#thor = Hero("Thor", "750", "I make grave mistakes all the time. Everything seems to work out.", "6","50", "200")
+odin = Hero("Odin", "500", "You have forgotten … And you will forget still more!", "6","100", "250")
+thor = Hero("Thor", "750", "I make grave mistakes all the time. Everything seems to work out.", "6","50", "200")
 #####################################
 os.system('cls')
 #####################################
@@ -28,7 +27,7 @@ my_bool = True
 dot = '.....\n'
 gold = 50
 level = 1
-fctMenu5 = "You have 2 options.\n1. Attempt to comunicate with the God\n2. Fight the God"
+fctMenu5 = "You have 2 options.\n1. Attempt to comunicate with the God\n2. Fight the God\n3. Run Away"
 #####################################
 def store():
     global gold
@@ -39,6 +38,22 @@ def store():
     print (advancedHammer.itemName(), advancedHammer.description(), advancedHammer.itemCost())
     print (bobsNuke.itemName(), bobsNuke.description(), bobsNuke.itemCost())
     print (tacticalNuke.itemName(), tacticalNuke.description(), tacticalNuke.itemCost())
+
+heroChoice = 'Odin'
+
+def lokiFight():
+    if heroChoice == 'Odin':
+        print(loki.nameCPU())
+        print(loki.healthRemCPU())
+        print(odin.nameUser())
+        print(odin.healthRemUser())
+    elif heroChoice == 'Thor':
+        print(loki.nameCPU())
+        print(loki.healthRemCPU())
+        print(thor.nameUser())
+        print(thor.healthUser())
+    else:
+        print ("Its all gone wrong")
 
 def path1():
     global dot
@@ -66,8 +81,12 @@ def path1():
                 store()
             else:
                 print ("You were unsucsseful. Now you must fight.")
+                lokiFight()
         elif choice == 2:
             print ("You chose to fight")
+            lokiFight()
+        elif choice == 3:
+            break
         else:
             print ("Invalid Input")
 
@@ -101,6 +120,8 @@ def path2():
                 print ("You were unsucsseful. Now you must fight.")
         elif choice == 2:
             print ("You chose to fight")
+        elif choice == 3:
+            break
         else:
             print ("Invalid Input")
     
@@ -134,6 +155,8 @@ def path3():
                 print ("You were unsucsseful. Now you must fight.")
         elif choice == 2 :
             print ("You chose to fight")
+        elif choice == 3:
+            break
         else:
             print ("Invalid Input")
 
@@ -155,6 +178,7 @@ def forestWalks():
 
 def Start():
     global hero
+    global heroChoice
     while True:
         for record in heroes:
             print("Name =", record[0])
@@ -165,9 +189,11 @@ def Start():
         print ("Choose a Hero\n1.Odin\n2.Thor")
         choice = int(input())
         if choice == 1:
+            heroChoice = 'Odin'
             hero = Hero("Odin", "500", "You have forgotten … And you will forget still more!", "6","100", "250")
             forestWalks()
         elif choice == 2:
+            heroChoice = 'Thor'
             hero = Hero("Thor", "750", "I make grave mistakes all the time. Everything seems to work out.", "6","50", "200")
             forestWalks()
         else:
@@ -191,4 +217,5 @@ def menu():
             print ("Not a valid Input try again")
 
 #####################################
-menu()
+#menu()
+lokiFight()
