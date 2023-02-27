@@ -18,7 +18,7 @@ center_x = int(screen_width/2 - window_width / 2)
 center_y = int(screen_height/2 - window_height / 2)
 root.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
 root.resizable(False, False)
-root.configure(background="deep pink")
+root.configure(background="grey")
 #####################################
 os.system('cls') 
 #####################################
